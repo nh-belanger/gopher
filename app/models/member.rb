@@ -8,4 +8,6 @@ class Member < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   validates :member_number, presence: true
+
+  has_many :teetimes
 end
