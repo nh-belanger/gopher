@@ -7,7 +7,7 @@ class Member < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
-  validates :member_number, presence: true
 
-  has_many :teetimes
+  has_many :member_teetimes
+  has_many :teetimes, through: :member_teetimes
 end
