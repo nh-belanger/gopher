@@ -8,12 +8,12 @@ class MembersController < ApplicationController
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to users_path
+    redirect_to members_path
   end
 
   private
 
   def member_params
-    params.require(:user).permit(:id)
+    params.require(:member).permit(:id)
   end
 end
