@@ -18,13 +18,13 @@ class TeetimesController < ApplicationController
 
   def create
     @teetime = Teetime.new(teetime_params)
-    @teetime.member = current_user
+    # @teetime.member = current_member
     @member = Member.find(params[:member_id])
-    @teetime.member = @member
+    # @teetime.member = @member
 
     if @teetime.save
       flash[:notice] = "Teetime reserved"
-      redirect_to @member
+      redirect_to members_path
     else
       flash[:notice] = "Teetime was not created"
       render :new
