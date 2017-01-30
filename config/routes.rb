@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :teetimes
   end
 
+  resources :teetimes
+
 
   resources :members, only: [:index, :destroy]
   resources :teetimes, only: [:index, :destroy]
