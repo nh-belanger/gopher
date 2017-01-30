@@ -1,0 +1,8 @@
+<h1>This is the teetime index page</h1>
+<ul>
+  <% @teetimes.each do |teetime| %>
+    <li>
+      <%= teetime.date %> <%= teetime.time %>
+    </li>
+  <% end %>
+</ul>
