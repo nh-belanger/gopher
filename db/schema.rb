@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130160712) do
+ActiveRecord::Schema.define(version: 20170130171834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "Members_Teetimes", id: false, force: :cascade do |t|
-    t.integer "member_id",  null: false
-    t.integer "teetime_id", null: false
-    t.index ["member_id", "teetime_id"], name: "index_Members_Teetimes_on_member_id_and_teetime_id", using: :btree
-    t.index ["teetime_id", "member_id"], name: "index_Members_Teetimes_on_teetime_id_and_member_id", using: :btree
-  end
 
   create_table "members", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -40,6 +33,13 @@ ActiveRecord::Schema.define(version: 20170130160712) do
     t.integer  "member_number",                       null: false
     t.index ["email"], name: "index_members_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "members_teetimes", id: false, force: :cascade do |t|
+    t.integer "member_id",  null: false
+    t.integer "teetime_id", null: false
+    t.index ["member_id", "teetime_id"], name: "index_members_teetimes_on_member_id_and_teetime_id", using: :btree
+    t.index ["teetime_id", "member_id"], name: "index_members_teetimes_on_teetime_id_and_member_id", using: :btree
   end
 
   create_table "teetimes", force: :cascade do |t|
