@@ -1,17 +1,34 @@
-class TeeTimeController < ApplicationController
+class TeetimeController < ApplicationController
   # TODO: add admin functionality
 
   def index
-    @teetimes = TeeTime.all
+    @teetimes = Teetime.all
   end
 
   def destroy
-    @teetime = TeeTime.find(params[:id])
+    @teetime = Teetime.find(params[:id])
     @teetime.destroy
     redirect_to members_path # NOTE: This path was users_path, changed to members_path. could be wrong
   end
 
+  def edit
+    @teetime = Teetime.find(params[:id])
+    @member = @teetime.member
+  end
 
+  def create
+    @teetime = Teetime.new(teetime_params)
+    @teetime.member = current_user
+    @member = Member.find(params[:member_id])
+    @teetime.member = @member
+
+    if @teetime.save
+      flash[:notice] = "Teetime reserved"
+      redirect_to @member
+    else
+      flash[:notice] = "Teetime was not created"
+      render :new
+    end
 
   private
 
