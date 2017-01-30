@@ -1,4 +1,4 @@
-class TeetimeController < ApplicationController
+class TeetimesController < ApplicationController
   # TODO: add admin functionality
 
   def index
@@ -29,10 +29,16 @@ class TeetimeController < ApplicationController
       flash[:notice] = "Teetime was not created"
       render :new
     end
+  end
+
+  def new
+    @member = Member.find(params[:member_id])
+    @teetime = Teetime.new
+  end
 
   private
 
   def teetime_params
-    params.require(:teetime).permit(:id)
+    params.require(:teetime).permit(:date, :time, :starting_hole)
   end
 end
