@@ -1,0 +1,17 @@
+<%= form_for [@member, @teetime] do |f| %>
+  <div>
+    <%= f.label :date %>
+    <%= f.number_field :date %>
+  </div>
+  <div>
+    <%= f.label :time %>
+    <%= f.text_area :time %>
+  </div>
+  <div>
+    <%= f.label :starting_hole %>
+    <%= f.text_area :starting_hole %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
