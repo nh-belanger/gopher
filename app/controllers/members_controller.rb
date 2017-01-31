@@ -13,8 +13,13 @@ class MembersController < ApplicationController
 
   def show
     sign_out :member
-    redirect_to welcome_index_path
+    redirect_to "members#index"
   end
+
+  # def show
+  #   sign_out :member
+  #   redirect_to welcome_index_path
+  # end
 
   private
 
