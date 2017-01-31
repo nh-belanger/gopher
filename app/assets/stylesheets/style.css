@@ -1,0 +1,139 @@
+body {
+  background: url(background.jpg) no-repeat center center fixed;
+}
+
+/* TODO: decide where to keep files, in style.css or application.css */
+
+.content-box {
+  margin-top: 30%;
+  background: rgba(0, 0, 0, .3);
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+}
+
+.content-box-form {
+  margin-top: 10%;
+  background: rgba(0, 0, 0, .3);
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+}
+
+.content-box-form-test {
+  margin-top: 5%;
+  background: rgba(0, 0, 0, .3);
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+}
+
+.content-box-form-title {
+  margin-top: 10%;
+  background: rgba(0, 0, 0, .3);
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+}
+
+.top-bar {
+  margin: 0px;
+  background: rgba(0, 0, 0, .3);
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+  color: white;
+  font-family: 'Pacifico', cursive;
+}
+
+/*// Height and margin
+$topbar-height: rem-calc(45);
+$topbar-margin-bottom: 0;*/
+
+
+/* TODO: fix top bar margin issue */
+.menu-text {
+  margin: 0px;
+  font-family: 'Pacifico', cursive;
+  color: white;
+  font-size: 175%;
+}
+
+.menu-vertical {
+  font-size: 125%;
+}
+
+a {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+}
+
+.top-bar ul {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.content-box:hover {
+  background: rgba(46, 44, 45, .6);
+}
+
+.link-box-top {
+  margin-top: 25%;
+  background: rgba(0, 0, 0, .3);
+  /*border-radius: 50px;*/
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+}
+
+.link-box-bottom {
+  margin-top: 5%;
+  background: rgba(0, 0, 0, .3);
+  /*border-radius: 50px;*/
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+  font-family: 'Roboto Slab', serif;
+  color: white;
+  list-style-type: none;
+}
+
+.link-box-top:hover {
+  background: rgba(46, 44, 45, .6);
+}
+
+.link-box-bottom:hover {
+  background: rgba(46, 44, 45, .6);
+}
+
+.custom-text {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+  list-style-type: none;
+}
+
+.homepage-title {
+  /*font-family: 'Roboto Slab', serif;*/
+  font-family: 'Pacifico', cursive;
+  color: white;
+  display: inline;
+  text-align: center;
+}
+
+.link-ul {
+  display: inline-block;
+}
+
+.welcome-page-links {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+
+  display: inline-block;
+}
+
+.form-links {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+
+  display: inline-block;
+}

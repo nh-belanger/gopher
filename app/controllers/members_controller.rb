@@ -11,6 +11,11 @@ class MembersController < ApplicationController
     redirect_to members_path
   end
 
+  def show
+    sign_out :member
+    redirect_to welcome_index_path
+  end
+
   private
 
   def member_params
