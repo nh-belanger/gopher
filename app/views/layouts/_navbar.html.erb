@@ -1,12 +1,18 @@
 
+
+
 <div class="top-bar">
+  <div class="top-bar-title">
+    <a href="/">Gopher</a>
+  </div>
+  <% if member_signed_in? %>
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Gopher</li>
+      <li class="menu-text"></li>
       <li>
-        <a href="#">One</a>
+        <a href= "#" >Reservations</a>
         <ul class="menu vertical">
-          <li><a href="#">One</a></li>
+          <li><a href="/members/<%= current_member.id %>/teetimes/new">Teetime</a></li>
           <li><a href="#">Two</a></li>
           <li><a href="#">Three</a></li>
         </ul>
@@ -15,9 +21,10 @@
       <li><a href="#">Three</a></li>
     </ul>
   </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-      <li><a href='members/edit'><%= current_member.last_name %>, <%= current_member.first_name %></a></li>
-    </ul>
-  </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><a href='members/edit'><%= current_member.last_name %>, <%= current_member.first_name %></a></li>
+      </ul>
+    </div>
+  <% end %>
 </div>
