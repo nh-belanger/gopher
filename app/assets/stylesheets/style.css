@@ -40,8 +40,9 @@ body {
   margin: 0px;
   background: rgba(0, 0, 0, .3);
   /*padding: 10px 10px 10px 10px;*/
-  border-color: rgba(255, 255, 255, 1);
-  border-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 1);
+
+  border-bottom-style: solid;
   color: white;
   font-family: 'Pacifico', cursive;
 }
@@ -55,12 +56,13 @@ $topbar-margin-bottom: 0;*/
 .menu-text {
   margin: 0px;
   font-family: 'Pacifico', cursive;
-  color: white;
+
   font-size: 175%;
 }
 
 .menu-vertical {
   font-size: 125%;
+  color: rgba(0, 0, 0, .1);
 }
 
 a {
