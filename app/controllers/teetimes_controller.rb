@@ -24,7 +24,8 @@ class TeetimesController < ApplicationController
 
     if @teetime.save
       flash[:notice] = "Teetime reserved"
-      redirect_to members_path
+      Timesheet.create(member: current_member, teetime: @teetime)
+      redirect_to member_teetimes_path
     else
       flash[:notice] = "Teetime was not created"
       render :new

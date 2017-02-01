@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130173347) do
+ActiveRecord::Schema.define(version: 20170201152741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,17 +35,17 @@ ActiveRecord::Schema.define(version: 20170130173347) do
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "members_teetimes", id: false, force: :cascade do |t|
-    t.integer "member_id"
-    t.integer "teetime_id"
-    t.index ["member_id"], name: "index_members_teetimes_on_member_id", using: :btree
-    t.index ["teetime_id"], name: "index_members_teetimes_on_teetime_id", using: :btree
+  create_table "teetimes", force: :cascade do |t|
+    t.time    "time",          null: false
+    t.date    "date",          null: false
+    t.integer "starting_hole", null: false
   end
 
-  create_table "teetimes", force: :cascade do |t|
-    t.integer "time",          null: false
-    t.integer "date",          null: false
-    t.integer "starting_hole", null: false
+  create_table "timesheets", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "teetime_id"
+    t.index ["member_id"], name: "index_timesheets_on_member_id", using: :btree
+    t.index ["teetime_id"], name: "index_timesheets_on_teetime_id", using: :btree
   end
 
 end
