@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="showpage-title">
+      <div class="small-1 large-6 small-centered large-centered columns">
+          <div class="content-box-form-title">
+            <h1 class="homepage-title small-3 large-6 small-centered large-centered"> <%= @teetime.members.first.first_name %> <%= @teetime.members.first.last_name %>'s Teetime</h1>
+          </div>
+      </div>
+    </div>
+</div>
+<br>
+
+<div class="column text-center small-4 large-6 small-centered large-centered">
+  <div class="teetimes-box">
+    <p class = "teetime-show-subtitle">Starting on hole <%= @teetime.starting_hole %>, at <%= @teetime.time.strftime('%l:%M %p ') %> on <%= @teetime.date.strftime('%a, %B %e ') %> </p>
+  </div>
+</div>
+<br>
+
+<div class="column text-center small-4 large-6 small-centered large-centered">
+  <div class="teetimes-box">
+    <p class = "custom-text-cursive">Player's List</p>
+    <ul>
+      <% @members.each do |member| %>
+        <li class = "teetime-list">
+          <%= member.last_name %>, <%= member.first_name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <br>
+  <div class="custom-button">
+    <%= link_to "Join", member_teetime_join_path(teetime_id: @teetime.id) %>
+  </div>
+</div>
+<br>
+<br>

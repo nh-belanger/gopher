@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :members
 
   resources :members do
-    resources :teetimes
+    resources :teetimes do
+      get :join
+    end
   end
 
 
