@@ -16,6 +16,17 @@ class TeetimesController < ApplicationController
     @member = @teetime.member
   end
 
+  def show
+    @teetime = Teetime.find(params[:id])
+    @members = @teetime.members
+  end
+
+  def join
+    @teetime = Teetime.find(params[:teetime_id])
+    Timesheet.create(teetime: @teetime, member: current_member)
+    redirect_to member_teetimes_path
+  end
+
   def create
     @teetime = Teetime.new(teetime_params)
     # @teetime.member = current_member

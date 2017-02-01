@@ -19,6 +19,11 @@ body {
   border-style: solid;
 }
 
+.teetimes-box:hover {
+  background: rgba(46, 44, 45, .6);
+  color: #176027;
+}
+
 .teetime-list {
   font-family: 'Roboto Slab', serif;
   color: white;
@@ -52,6 +57,28 @@ body {
   border-color: rgb(255, 255, 255);
   border-style: solid;
 }
+
+.content-box-form-title:hover {
+  background: rgba(46, 44, 45, .6);
+  color: #176027;
+}
+
+.custom-button {
+    background-color: rgba(46, 44, 45, .3);
+    border-style: solid;
+    border-color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 150%;
+    font-family: 'Pacifico', cursive;
+}
+
+.custom-button:hover {
+  background: rgba(46, 44, 45, .6);
+}
+
 
 .top-bar {
   padding: 0vw;
@@ -160,6 +187,13 @@ a:hover, a:focus {
   list-style-type: none;
 }
 
+.custom-text-cursive {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  list-style-type: none;
+  font-size: 200%;
+}
+
 .homepage-title {
   /*font-family: 'Roboto Slab', serif;*/
   font-family: 'Pacifico', cursive;
@@ -167,6 +201,29 @@ a:hover, a:focus {
   display: inline;
   text-align: center;
   margin-bottom: 5px;
+}
+
+.showpage-title {
+  /*font-family: 'Roboto Slab', serif;*/
+  font-family: 'Pacifico', cursive;
+  color: white;
+  display: inline;
+  text-align: center;
+}
+
+.showpage-title:hover {
+    background: rgba(46, 44, 45, .6);
+}
+
+.teetime-show-subtitle {
+  font-size: 125%;
+}
+
+.teetime-show-subtitle {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+  display: inline;
+  text-align: center;
 }
 
 .lable {
