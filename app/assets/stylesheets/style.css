@@ -12,6 +12,23 @@ body {
   border-style: solid;
 }
 
+.teetimes-box {
+  background: rgba(0, 0, 0, .3);
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+}
+
+.teetime-list {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+  list-style-type: none;
+}
+
+.top-bar-section .has-dropdown > a:after {
+    border-color: #FFFFFF rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+
 .content-box-form {
   margin-top: 3%;
   background: rgba(0, 0, 0, .3);
@@ -79,6 +96,23 @@ will just target the text as you asked - i.e. it will leave dividers in place wi
 a {
   /*font-family: 'Roboto Slab', serif;*/
   color: white;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    content: '';
+    border-bottom-width: 0;
+    border-top-style: solid;
+    border-color: #FFFFFF transparent transparent;
+    right: 5px;
+    margin-top: -3px;
+}
+
+a:hover, a:focus {
+    color: #176027;
 }
 
 .top-bar ul {
