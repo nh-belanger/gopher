@@ -29,9 +29,14 @@
     <% end -%>
 
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <div class="custom-button">
+        <%= f.submit "Log in" %>
+      </div>
     </div>
     <% end %>
   </div>
 </div>
+
+<div class="custom-button">
 <%= render "devise/shared/links" %>
+</div>

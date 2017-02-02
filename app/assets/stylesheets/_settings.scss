@@ -327,7 +327,7 @@ $drilldown-background: $white;
 // ------------
 
 $dropdown-padding: 1rem;
-$dropdown-background: $body-background;
+$dropdown-background: rgba(0, 0, 0, 0.0);
 $dropdown-border: 1px solid $medium-gray;
 $dropdown-font-size: 1rem;
 $dropdown-width: 300px;
@@ -371,12 +371,12 @@ $select-background: $white;
 $select-triangle-color: $dark-gray;
 $select-radius: $global-radius;
 $input-color: $white;
-$input-placeholder-color: $dark-gray;
+$input-placeholder-color: $white;
 $input-font-family: inherit;
 $input-font-size: rem-calc(16);
 $input-font-weight: $global-weight-normal;
 // changed this color
-$input-background: rgba(0, 0, 0, 0.5);
+$input-background: rgba(0, 0, 0, 0.7);
 // changed this color
 $input-background-focus: rgba(0, 0, 0, 0.7);
 $input-background-disabled: $light-gray;
