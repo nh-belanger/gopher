@@ -37,6 +37,9 @@
     <div>
       <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", autocomplete: "off" %>
     </div>
+    <div>
+      <%= f.text_field :role, :placeholder => "role", autofocus: true %>
+    </div>
     <br>
     <div class="actions">
       <%= f.submit "Sign up", :class => "custom-button"%>

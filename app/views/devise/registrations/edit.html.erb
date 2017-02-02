@@ -35,14 +35,14 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Update" %>
+        <%= f.submit "Update", :class => "custom-button" %>
       </div>
+      <div class="actions">
+        <%= button_to "Cancel my account", registration_path(resource_name), class: "custom-button", data: { confirm: "Are you sure?" }, method: :delete %></p>
+      </div>
+
     <% end %>
   </div>
 </div>
 
 <%# TODO: add looking for partner tag to the teetime object %>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

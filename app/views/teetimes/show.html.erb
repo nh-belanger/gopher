@@ -31,6 +31,14 @@
   <div class="custom-button">
     <%= link_to "Join", member_teetime_join_path(teetime_id: @teetime.id) %>
   </div>
+
+  <% unless current_member.nil? %>
+    <% if @member_can_change  %>
+      <div class="custom-button">
+        <%= link_to "Edit", edit_member_teetime_path %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
 <br>
 <br>

@@ -1,6 +1,9 @@
 class TeetimesController < ApplicationController
+  # before_action :authorize_member, except: [:index, :show]
+
   def index
     @teetimes = Teetime.all
+    @member_can_create = !current_member.nil?
   end
 
   def destroy
@@ -11,12 +14,27 @@ class TeetimesController < ApplicationController
 
   def edit
     @teetime = Teetime.find(params[:id])
-    @member = @teetime.member
+    @member = @teetime.members.first
+
+    unless can_change?(@teetime)
+      raise ActionController::RoutingError.new("Not Found")
+    end
+
+    @member_can_change = false
+    unless current_member.nil?
+      @member_can_change = can_change?(@teetime)
+    end
   end
 
   def show
     @teetime = Teetime.find(params[:id])
     @members = @teetime.members
+    @member = @teetime.members.first
+
+    @member_can_change = false
+    unless current_member.nil?
+      @member_can_change = can_change?(@teetime)
+    end
   end
 
   def join
@@ -41,14 +59,45 @@ class TeetimesController < ApplicationController
     end
   end
 
+  def update
+    @teetime = Teetime.find(params[:id])
+
+    unless can_change?(@teetime)
+      raise ActionController::RoutingError.new("Not Found")
+    end
+
+    if @teetime.update(teetime_params)
+      flash[:notice] = "You edited a teetime."
+      redirect_to member_teetime_path(@teetime)
+    else
+      flash[:notice] = @item.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
+
   def new
     @member = Member.find(params[:member_id])
     @teetime = Teetime.new
   end
+
+  # TODO: can't join teetime if 4 or more people already joined
 
   private
 
   def teetime_params
     params.require(:teetime).permit(:date, :time, :starting_hole)
   end
+
+  def can_change?(teetime)
+    # current_member == teetime.members.first || current_member.role == "admin"
+    current_member.role == "admin" || current_member == teetime.members.first
+  end
+
+  def authorize_member
+    # if !member_signed_in? || !current_member.admin?
+    if !member_signed_in? || !current_member.role == "admin"
+      raise ActionController::RoutingError.new("Not Found")
+    end
+  end
+
 end

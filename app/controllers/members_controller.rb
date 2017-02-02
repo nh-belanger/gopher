@@ -23,6 +23,14 @@ class MembersController < ApplicationController
 
   private
 
+  def admin?
+    if !member_signed_in?
+      raise ActionController::RoutingError.new("Not Found")
+    elsif current_member.role != 'admin'
+      raise ActionController::RoutingError.new("Not Found")
+    end
+  end
+
   def member_params
     params.require(:member).permit(:id)
   end

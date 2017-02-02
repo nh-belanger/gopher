@@ -13,5 +13,8 @@ class Member < ApplicationRecord
 
   has_many :dinings
   has_many :reservations, through: :dinings
-  # has_and_belongs_to_many :teetimes
+
+  def admin?
+    role == "admin"
+  end
 end

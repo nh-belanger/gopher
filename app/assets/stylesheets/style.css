@@ -10,6 +10,8 @@ body {
   border-style: solid;
 }
 
+/* TODO: add edit to reservations and teetimes */
+
 .error-msg {
   width: 100%;
   color: #FFFFFF;
@@ -86,12 +88,14 @@ body {
 .custom-button {
     background-color: rgba(0, 0, 0, 0.8);
     border-style: solid;
+    border-width: thin;
     border-color: rgb(168, 168, 168);
-    padding: 4px 8px;
+    padding: 2px 4px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 150%;
+    margin-top: 5px;
+    font-size: 125%;
     font-family: 'Roboto Slab', serif;
     color: white;
 }
