@@ -21,9 +21,20 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def join
+    @reservation = Reservation.find(params[:reservation_id])
+    Dining.create(reservation: @reservation, member: current_member)
+    redirect_to member_reservations_path
+  end
+
   def new
     @member = Member.find(params[:member_id])
     @reservation = Reservation.new
+  end
+
+  def show
+    @reservation = Reservation.find(params[:id])
+    @members = @reservation.members
   end
 
   private
