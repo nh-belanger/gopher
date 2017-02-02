@@ -1,6 +1,4 @@
 class TeetimesController < ApplicationController
-  # TODO: add admin functionality
-
   def index
     @teetimes = Teetime.all
   end
@@ -8,7 +6,7 @@ class TeetimesController < ApplicationController
   def destroy
     @teetime = Teetime.find(params[:id])
     @teetime.destroy
-    redirect_to members_path # NOTE: This path was users_path, changed to members_path. could be wrong
+    redirect_to members_path
   end
 
   def edit
@@ -29,9 +27,9 @@ class TeetimesController < ApplicationController
 
   def create
     @teetime = Teetime.new(teetime_params)
-    # @teetime.member = current_member
+
     @member = Member.find(params[:member_id])
-    # @teetime.member = @member
+
 
     if @teetime.save
       flash[:notice] = "Teetime reserved"

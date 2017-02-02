@@ -2,8 +2,6 @@ body {
   background: url(background.jpg) no-repeat center center fixed;
 }
 
-/* TODO: decide where to keep files, in style.css or application.css */
-
 .content-box {
   margin-top: 30%;
   background: rgba(0, 0, 0, .5);
@@ -12,12 +10,20 @@ body {
   border-style: solid;
 }
 
+.error-msg {
+  width: 100%;
+  color: #FFFFFF;
+  margin: auto;
+  font-family: 'Roboto Slab', serif;
+  margin: auto;
+  text-align: center;
+  background: rgba(255, 0, 0, .5);
+}
+
 .content-box:hover {
   background: rgba(0, 0, 0, .7)
   border-color: white;
 }
-
-/* TODO: make glass less transparent */
 
 .teetimes-box {
   background: rgba(0, 0, 0, .6);

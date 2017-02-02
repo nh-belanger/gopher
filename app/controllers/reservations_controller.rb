@@ -1,15 +1,11 @@
 class ReservationsController < ApplicationController
-  # TODO: add admin functionality
-
   def index
     @reservations = Reservation.all
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
-    # @reservation.member = current_member
     @member = Member.find(params[:member_id])
-    # @reservation.member = @member
 
     if @reservation.save
       flash[:notice] = "Reservation reserved"
@@ -21,6 +17,8 @@ class ReservationsController < ApplicationController
     end
   end
 
+  # TODO: add google calendar integration
+  
   def join
     @reservation = Reservation.find(params[:reservation_id])
     Dining.create(reservation: @reservation, member: current_member)

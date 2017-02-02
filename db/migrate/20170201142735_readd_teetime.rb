@@ -7,6 +7,3 @@ class ReaddTeetime < ActiveRecord::Migration[5.0]
     end
   end
 end
-
-# TODO: re-build teetime timetable
-# TODO: create migration to re-create the join table, the right way this time
