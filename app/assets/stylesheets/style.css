@@ -13,14 +13,14 @@ body {
 }
 
 .content-box:hover {
-  background: rgba(46, 44, 45, .8)
+  background: rgba(0, 0, 0, .7)
   border-color: white;
 }
 
 /* TODO: make glass less transparent */
 
 .teetimes-box {
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, .6);
   /*padding: 10px 10px 10px 10px;*/
   border-color: rgb(168, 168, 168);
   border-style: solid;
@@ -65,14 +65,15 @@ body {
 
 .content-box-form-title {
   margin-top: 10%;
-  background: rgba(0, 0, 0, .7);
+  background: rgba(0, 0, 0, .5);
   /*padding: 10px 10px 10px 10px;*/
-  border-color: rgb(255, 255, 255);
+  border-color: rgb(168, 168, 168);
   border-style: solid;
 }
 
 .content-box-form-title:hover {
-  background: rgba(46, 44, 45, .6);
+  background: rgba(0, 0, 0, 0.7);
+  border-color: white;
   color: #176027;
 }
 
@@ -85,7 +86,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 150%;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Roboto Slab', serif;
     color: white;
 }
 
@@ -94,7 +95,34 @@ body {
   border-color: white;
 }
 
+.custom-button-small {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-style: solid;
+    border-color: rgb(168, 168, 168);
+    padding: 0px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 75%;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+    border-width: thin;
+}
 
+.custom-button-small:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: white;
+}
+
+.custom-label {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2px 2px;
+  border-color: white;
+  border-style: solid;
+  border-width: thin;
+}
 
 .top-bar {
   padding: 0vw;
@@ -111,6 +139,7 @@ body {
   color: white;
   font-family: 'Pacifico', cursive, !important;
   font-size: 150%;
+  margin-left: 10px;
 }
 
 
@@ -155,10 +184,10 @@ a:hover, a:focus {
 
 .link-box-top {
   margin-top: 25%;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .5);
   /*border-radius: 50px;*/
   /*padding: 10px 10px 10px 10px;*/
-  border-color: rgba(255, 255, 255, 1);
+  border-color: rgb(168, 168, 168);
   border-style: solid;
 }
 
@@ -176,6 +205,7 @@ a:hover, a:focus {
 
 .link-box-top:hover {
   background: rgba(0, 0, 0, .8);
+  border-color: white;
 }
 
 .link-box-bottom:hover {
@@ -215,7 +245,8 @@ a:hover, a:focus {
 }
 
 .showpage-title:hover {
-    background: rgba(46, 44, 45, .6);
+    background: rgba(0, 0, 0, .8);
+    border-color: white;
 }
 
 .teetime-show-subtitle {

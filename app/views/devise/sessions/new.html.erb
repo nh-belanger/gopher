@@ -20,23 +20,17 @@
     <div class="field">
       <%= f.password_field :password, :placeholder => "Password", autocomplete: "off" %>
     </div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-    <% end -%>
-
+    <br>
     <div class="actions">
-      <div class="custom-button">
-        <%= f.submit "Log in" %>
-      </div>
+      <%= f.submit "Log in", :class => 'custom-button' %>
     </div>
     <% end %>
+    <div class="custom-button-small">
+      <%= link_to "Forgot Your Password?", new_member_password_path %>
+    </div>
+    <br>
+    <div class="custom-button-small">
+      <%= link_to "Want to Register?", new_member_registration_path %>
+    </div>
   </div>
-</div>
-
-<div class="custom-button">
-<%= render "devise/shared/links" %>
 </div>

@@ -32,17 +32,14 @@
     </div>
 
     <div>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, placeholder: "Password", autocomplete: "off" %>
+      <%= f.password_field :password, placeholder: "Password (minimum 6 characters)", autocomplete: "off" %>
     </div>
     <div>
       <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", autocomplete: "off" %>
     </div>
     <br>
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign up", :class => "custom-button"%>
     </div>
     <br>
     <br>
