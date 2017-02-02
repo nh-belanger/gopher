@@ -6,28 +6,41 @@ body {
 
 .content-box {
   margin-top: 30%;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .5);
   /*padding: 10px 10px 10px 10px;*/
-  border-color: rgba(255, 255, 255, 1);
+  border-color: rgb(168, 168, 168);
   border-style: solid;
 }
 
+.content-box:hover {
+  background: rgba(46, 44, 45, .8)
+  border-color: white;
+}
+
+/* TODO: make glass less transparent */
+
 .teetimes-box {
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .5);
   /*padding: 10px 10px 10px 10px;*/
-  border-color: rgba(255, 255, 255, 1);
+  border-color: rgb(168, 168, 168);
   border-style: solid;
+  margin-bottom: 1vw;
 }
 
 .teetimes-box:hover {
-  background: rgba(46, 44, 45, .6);
-  color: #176027;
+  background: rgba(0, 0, 0, .8);
+  border-color: white;
 }
 
 .teetime-list {
   font-family: 'Roboto Slab', serif;
   color: white;
   list-style-type: none;
+  font-size: 125%;
+}
+
+.dropdown li {
+  background: black;
 }
 
 .top-bar-section .has-dropdown > a:after {
@@ -52,7 +65,7 @@ body {
 
 .content-box-form-title {
   margin-top: 10%;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .7);
   /*padding: 10px 10px 10px 10px;*/
   border-color: rgb(255, 255, 255);
   border-style: solid;
@@ -64,26 +77,29 @@ body {
 }
 
 .custom-button {
-    background-color: rgba(46, 44, 45, .3);
+    background-color: rgba(0, 0, 0, 0.8);
     border-style: solid;
-    border-color: white;
-    padding: 8px 16px;
+    border-color: rgb(168, 168, 168);
+    padding: 4px 8px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 150%;
     font-family: 'Pacifico', cursive;
+    color: white;
 }
 
 .custom-button:hover {
-  background: rgba(46, 44, 45, .6);
+  background: rgba(0, 0, 0, 0.8);
+  border-color: white;
 }
+
 
 
 .top-bar {
   padding: 0vw;
   margin: 0px;
-  background: rgba(0, 0, 0, .7);
+  background: black;
   border-bottom-color: rgba(255, 255, 255, 1);
   font-size: 125%;
   border-bottom-style: solid;
@@ -97,12 +113,7 @@ body {
   font-size: 150%;
 }
 
-/*// Height and margin
-$topbar-height: rem-calc(45);
-$topbar-margin-bottom: 0;*/
 
-
-/* TODO: fix top bar margin issue */
 .menu-text {
   font-family: 'Pacifico', cursive;
   font-size: 175%;
@@ -110,15 +121,8 @@ $topbar-margin-bottom: 0;*/
 
 .menu-vertical {
   font-size: 125%, !important;
-  background-color: rgba(0, 0, 0, .5);
+  /*background-color: rgba(0, 0, 0, .5);*/
 }
-
-
-
-/*will push the whole thing down (including dividers if present)*/
-
-/*.top-bar-section ul li a{margin-top :15px}
-will just target the text as you asked - i.e. it will leave dividers in place with no top margin*/
 
 a {
   /*font-family: 'Roboto Slab', serif;*/
@@ -139,18 +143,15 @@ a {
 }
 
 a:hover, a:focus {
-    color: #176027;
+    color: green;
 }
 
 .top-bar ul {
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0);
   color: white;
   margin-top: 9px;
 }
 
-.content-box:hover {
-  background: rgba(46, 44, 45, .6);
-}
 
 .link-box-top {
   margin-top: 25%;
@@ -163,10 +164,10 @@ a:hover, a:focus {
 
 .link-box-bottom {
   margin-top: 5%;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .5);
   /*border-radius: 50px;*/
   /*padding: 10px 10px 10px 10px;*/
-  border-color: rgba(255, 255, 255, 1);
+  border-color: rgb(168, 168, 168);
   border-style: solid;
   font-family: 'Roboto Slab', serif;
   color: white;
@@ -174,11 +175,12 @@ a:hover, a:focus {
 }
 
 .link-box-top:hover {
-  background: rgba(46, 44, 45, .6);
+  background: rgba(0, 0, 0, .8);
 }
 
 .link-box-bottom:hover {
-  background: rgba(46, 44, 45, .6);
+  background: rgba(0, 0, 0, .8);
+  border-color: white;
 }
 
 .custom-text {
@@ -201,6 +203,7 @@ a:hover, a:focus {
   display: inline;
   text-align: center;
   margin-bottom: 5px;
+
 }
 
 .showpage-title {
