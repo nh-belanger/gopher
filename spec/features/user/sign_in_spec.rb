@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Sign in' do
   scenario 'an existing member specifies a valid email and password' do
     member = FactoryGirl.create(:member)
-    visit root_path
+    visit "/"
     click_link 'Sign In'
 
     fill_in 'email', with: member.email

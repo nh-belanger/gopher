@@ -9,6 +9,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :members do
+    resources :reservations do
+      get :join
+    end
+  end
+
 
 
 
