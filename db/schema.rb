@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201152741) do
+ActiveRecord::Schema.define(version: 20170202042247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dinings", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "reservation_id"
+    t.index ["member_id"], name: "index_dinings_on_member_id", using: :btree
+    t.index ["reservation_id"], name: "index_dinings_on_reservation_id", using: :btree
+  end
 
   create_table "members", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -33,6 +40,13 @@ ActiveRecord::Schema.define(version: 20170201152741) do
     t.integer  "member_number",                       null: false
     t.index ["email"], name: "index_members_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.time    "time",       null: false
+    t.date    "date",       null: false
+    t.string  "room",       null: false
+    t.integer "party_size", null: false
   end
 
   create_table "teetimes", force: :cascade do |t|

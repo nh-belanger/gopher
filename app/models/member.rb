@@ -10,5 +10,8 @@ class Member < ApplicationRecord
 
   has_many :timesheets
   has_many :teetimes, through: :timesheets
+
+  has_many :dinings
+  has_many :reservations, through: :dinings
   # has_and_belongs_to_many :teetimes
 end
