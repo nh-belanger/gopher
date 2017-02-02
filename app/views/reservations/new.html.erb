@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="homepage-title">
+      <div class="small-1 large-6 small-centered large-centered columns">
+          <div class="content-box-form-title">
+            <h1 class="homepage-title small-3 large-6 small-centered large-centered">Make a Reservation</h1>
+          </div>
+      </div>
+    </div>
+</div>
+<br>
+<br>
+
+<%= form_for([@member, @reservation]) do |f| %>
+
+<div class="row">
+  <div class="column text-center small-4 large-6 small-centered large-centered">
+
+    <div>
+      <%= f.select :room, [['Dining Room','dining room'],['Grille Room','grille room'],['Pub','pub']] %>
+    </div>
+
+    <div>
+      <%= f.number_field :party_size, :placeholder => "party size", autofocus: true %>
+    </div>
+
+    <div>
+      <%= f.date_field :date, :placeholder => "Date (103093)", autofocus: true %>
+    </div>
+
+    <div>
+      <%= f.time_field :time, :placeholder => "Time (1200)", autofocus: true %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Reserve", :class => 'custom-button' %>
+    </div>
+    <br>
+    <br>
+    <% end %>
+  </div>
+</div>

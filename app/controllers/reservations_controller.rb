@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
       flash[:notice] = "Reservation reserved"
-      Timesheet.create(member: current_member, reservation: @reservation)
+      Dining.create(member: current_member, reservation: @reservation)
       redirect_to member_reservations_path
     else
       flash[:notice] = "Reservation was not created"
