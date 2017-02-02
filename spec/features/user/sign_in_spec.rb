@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Sign in' do
-  scenario 'an existing member specifies a valid email and password' do
+  xscenario 'an existing member specifies a valid email and password' do
     member = FactoryGirl.create(:member)
     visit root_path
     click_link 'Sign In'
