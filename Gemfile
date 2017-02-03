@@ -10,6 +10,9 @@ gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'foundation-rails'
+gem 'omniauth-google-oauth2'
+gem 'google-api-client'
+gem 'google_calendar'
 
 group :development do
   gem 'listen', '~> 3.0.5'
