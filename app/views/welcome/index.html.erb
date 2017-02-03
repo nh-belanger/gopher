@@ -1,15 +1,21 @@
 <%# TODO: force user to sign in to view any pages other than welcome, sign-in, or sign-up %>
 <div class="row">
+  <div class="animated fadeInUp">
     <div class="homepage-title">
       <div class="small-1 large-6 small-centered large-centered columns">
-          <div class="content-box">
+        <div class="content-box">
             <h1 class="homepage-title small-3 large-6 small-centered large-centered">Kill all the Golfers?</h1>
           </div>
+        </div>
       </div>
     </div>
+  </div>
 </div>
 
 <div class="row">
+  <div class="animated fadeInUp">
+
+
   <% if !member_signed_in? %>
   <div class="column text-center small-2 large-4 small-centered large-centered">
       <a href= "/members/sign_in" >
@@ -41,5 +47,6 @@
         </div>
       </a>
   <% end %>
+</div>
   </div>
 </div>
