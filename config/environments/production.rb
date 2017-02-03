@@ -83,5 +83,9 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
+
+  # heroku fix?
+  config.assets.initialize_on_precompile = false
+
   config.active_record.dump_schema_after_migration = false
 end
