@@ -13,11 +13,15 @@
     <%= csrf_meta_tags %>
     <!-- animate css -->
     <link rel="stylesheet" href="animate.css">
+    <script src="js/wow.min.js"></script>
+           <script>
+           new WOW().init();
+           </script>
     <%= render 'layouts/navbar' %>
   </head>
 
   <body>
-    <div class='error-msgs'>
+    <div class='animated fadeInDown error-msgs'>
       <% flash.each do |name, msg| %>
         <div class='error-msg'>
           <% msg = "Invalid Electronic Mail or Password" if msg == 'Invalid Email or password.' %>
