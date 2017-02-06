@@ -29,6 +29,9 @@
     <div class="actions">
       <%= f.submit "Edit", :class => 'custom-button' %>
     </div>
+    <div class="custom-button">
+      <%= link_to 'Delete Teetime', member_teetime_path(@member, @teetime), data: {:confirm => 'Are you sure?'}, :method => :delete %>
+    </div>
     <br>
     <br>
     <% end %>

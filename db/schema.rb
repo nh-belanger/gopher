@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170202200902) do
+ActiveRecord::Schema.define(version: 20170203235534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20170202200902) do
     t.integer "reservation_id"
     t.index ["member_id"], name: "index_dinings_on_member_id", using: :btree
     t.index ["reservation_id"], name: "index_dinings_on_reservation_id", using: :btree
+  end
+
+  create_table "holes", force: :cascade do |t|
+    t.integer "number", null: false
+    t.integer "par",    null: false
+    t.integer "length", null: false
+    t.integer "score"
   end
 
   create_table "members", force: :cascade do |t|
@@ -50,6 +57,12 @@ ActiveRecord::Schema.define(version: 20170202200902) do
     t.date    "date",       null: false
     t.string  "room",       null: false
     t.integer "party_size", null: false
+  end
+
+  create_table "scorecards", force: :cascade do |t|
+    t.integer "course_par",    null: false
+    t.integer "course_length", null: false
+    t.integer "total_score"
   end
 
   create_table "teetimes", force: :cascade do |t|
