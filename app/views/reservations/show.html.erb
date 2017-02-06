@@ -2,7 +2,7 @@
     <div class="showpage-title">
       <div class="small-1 large-6 small-centered large-centered columns">
           <div class="content-box-form-title">
-            <h1 class="homepage-title small-3 large-6 small-centered large-centered"> <%= @reservation.members.first.first_name %> <%= @reservation.members.first.last_name %>'s Teetime</h1>
+            <h1 class="homepage-title small-3 large-6 small-centered large-centered"> <%= @reservation.members.first.first_name %> <%= @reservation.members.first.last_name %>'s Reservation</h1>
           </div>
       </div>
     </div>
@@ -31,6 +31,14 @@
   <div class="custom-button">
     <%= link_to "Join", member_reservation_join_path(reservation_id: @reservation.id) %>
   </div>
+
+  <% unless current_member.nil? %>
+    <% if @member_can_change  %>
+      <div class="custom-button">
+        <%= link_to "Edit", edit_member_reservation_path %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
 <br>
 <br>

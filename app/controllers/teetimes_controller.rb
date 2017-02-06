@@ -9,7 +9,8 @@ class TeetimesController < ApplicationController
   def destroy
     @teetime = Teetime.find(params[:id])
     @teetime.destroy
-    redirect_to members_path
+    redirect_to member_teetimes_path
+    flash[:notice] = "Teetime was Deleted"
   end
 
   def edit
