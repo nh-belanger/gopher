@@ -12,7 +12,7 @@ const SearchForm = props => {
 
   return(
     <div className='content-box'>
-      <h1>Add a Teetime</h1>
+      <h1 className="custom-text">Add a Teetime</h1>
       <input type='text' onChange={handleChange} placeholder="Search" />
       {addTeetime}
     </div>

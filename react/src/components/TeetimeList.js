@@ -8,7 +8,7 @@ class TeetimeList extends Component {
     };
 
     this.componentDidMount = this.componentDidMount.bind(this);
-    this.getItems = this.getItems.bind(this);
+    this.getTeetimes = this.getTeetimes.bind(this);
   }
 
   componentDidMount() {
@@ -33,7 +33,7 @@ class TeetimeList extends Component {
       .then(body => {
         this.props.setSignedIn(body.signedIn);
         this.setState({
-          items: body.teetimes
+          teetimes: body.teetimes
         });
       });
   }
@@ -42,7 +42,7 @@ class TeetimeList extends Component {
     let teetimes = '';
     if (this.state.teetimes) {
       teetimes = this.state.teetimes.filter((teetime)=>{return teetime.date.toLowerCase().search(this.props.query.toLowerCase()) > -1; });
-      teetimes = teetimes.map((item) => {
+      teetimes = teetimes.map((teetime) => {
         let className = 'small-4 column content-box';
         // if (item == this.state.items[this.state.items.length - 1]) {
         //   className += ' end';
@@ -51,7 +51,7 @@ class TeetimeList extends Component {
           <div key={teetime.id} className={className}>
             <a href={`/teetimes/${teetime.id}`}>
               <div className='content-box'>
-                <p><b>{teetime.members.first.first_name}</b></p>
+                <p><b>{teetime.date}</b></p>
               </div>
             </a>
           </div>

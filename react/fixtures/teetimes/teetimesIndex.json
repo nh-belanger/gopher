@@ -1,1 +1,10 @@
-TODO: build this json file
+{"teetimes":
+  [
+    {
+    "id":1,
+    "date": "2000-01-01",
+    "time": "2000-01-01 15:33:00 UTC",
+    "starting_hole": 1
+    }
+  ]
+}
