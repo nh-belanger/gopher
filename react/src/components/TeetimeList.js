@@ -43,18 +43,24 @@ class TeetimeList extends Component {
     if (this.state.teetimes) {
       teetimes = this.state.teetimes.filter((teetime)=>{return teetime.date.toLowerCase().search(this.props.query.toLowerCase()) > -1; });
       teetimes = teetimes.map((teetime) => {
-        let className = 'small-4 column content-box';
+        // let className = 'small-4 column content-box';
         // if (item == this.state.items[this.state.items.length - 1]) {
         //   className += ' end';
         // }
         return (
-          <div key={teetime.id} className={className}>
+          <ul>
+          <div key={teetime.id} className="text-center small-4 large-6 small-centered large-centered">
+          <div key={teetime.id} className="teetimes-box">
+          <li className="teetime-list">
             <a href={`/teetimes/${teetime.id}`}>
               <div className='content-box'>
                 <p><b>{teetime.date}</b></p>
               </div>
             </a>
+          </li>
           </div>
+          </div>
+          </ul>
         );
       });
     }
