@@ -9,9 +9,9 @@ class Api::V1::TeetimesController < ApplicationController
 
   def show
     @teetime = Teetime.find(params[:id])
-    @members = @teetime.reviews.order("score DESC")
+    @members = @teetime.members.all
     @current_user = current_user
-    # @reviews.each { |review| @users << review.user }
+    # @members.each { |member| @teetimes << review.user }
     render json: { teetimes: @teetimes, members: @members, currentUser: @current_user }
   end
 end
