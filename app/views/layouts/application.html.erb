@@ -3,25 +3,52 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <%= render 'layouts/navbar' %>
-    <!-- Font links -->
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-    <!-- End font links -->
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-    <!-- animate css -->
     <link rel="stylesheet" href="animate.css">
     <script src="js/wow.min.js"></script>
            <script>
            new WOW().init();
            </script>
-
   </head>
 
   <body>
+    <div class="animated fadeInDown">
+
+
+    <div class="top-bar">
+      <div class="top-bar-title">
+        <a href="/">Gopher</a>
+      </div>
+      <% if member_signed_in? %>
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text"></li>
+          <li>
+            <a href= "#" >Schedule</a>
+            <ul class="menu vertical">
+              <li><a href="/members/<%= current_member.id %>/teetimes/new">Teetime</a></li>
+              <li><a href="/members/<%= current_member.id %>/reservations/new">Dining</a></li>
+              <li><a href="#">Three</a></li>
+            </ul>
+          </li>
+          <li><a href="/members/<%= current_member.id %>/teetimes">Teetimes</a></li>
+          <li><a href="/members/<%= current_member.id %>/reservations">Reservations</a></li>
+        </ul>
+      </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><a href='/members/sign_out'>Sign out?</a></li>
+            <li><a href='/members/edit'><%= current_member.last_name %>, <%= current_member.first_name %></a></li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+    </div>
+
     <div class='animated fadeInDown error-msgs'>
       <% flash.each do |name, msg| %>
         <div class='error-msg'>
