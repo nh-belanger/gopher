@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%= render 'layouts/navbar' %>
     <!-- Font links -->
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
@@ -17,7 +18,7 @@
            <script>
            new WOW().init();
            </script>
-    <%= render 'layouts/navbar' %>
+
   </head>
 
   <body>
@@ -33,6 +34,5 @@
 
 
     <%= yield %>
-
   </body>
 </html>
