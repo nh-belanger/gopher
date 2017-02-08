@@ -33,6 +33,10 @@
       <%= f.number_field :starting_hole, :placeholder => "Starting Hole", autofocus: true %>
     </div>
 
+    <div>
+      <%= f.hidden_field :creator, :value => "#{current_member.last_name}, #{current_member.first_name}" %>
+    </div>
+
     <div class="actions">
       <%= f.submit "Reserve", :class => 'custom-button' %>
     </div>

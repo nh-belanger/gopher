@@ -4,6 +4,11 @@ class Api::V1::TeetimesController < ApplicationController
   def index
     @teetimes = Teetime.all.order("date DESC")
     @signed_in = !current_member.nil?
+    @teetimes.each do |teetime|
+      teetime.formatteddate = teetime.date.strftime('%a, %B %e ')
+      teetime.formattedtime = teetime.time.strftime('%l:%M %p')
+    end
+
     render json: {teetimes: @teetimes, signedIn: @signed_in}
   end
 

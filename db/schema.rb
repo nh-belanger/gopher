@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170203235534) do
+ActiveRecord::Schema.define(version: 20170208012717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,9 @@ ActiveRecord::Schema.define(version: 20170203235534) do
     t.time    "time",          null: false
     t.date    "date",          null: false
     t.integer "starting_hole", null: false
+    t.string  "creator"
+    t.string  "formatteddate"
+    t.string  "formattedtime"
   end
 
   create_table "timesheets", force: :cascade do |t|
