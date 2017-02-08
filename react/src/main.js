@@ -5,8 +5,10 @@ import ReactDOM from 'react-dom';
 import IndexApp from './components/IndexApp';
 
 $(function() {
-  ReactDOM.render(
-    < IndexApp />,
-    document.getElementById('TeetimeList')
-  );
+  if (document.getElementById('ReviewList')) {
+    ReactDOM.render(
+      < IndexApp />,
+      document.getElementById('TeetimeList')
+    );
+  }
 });
