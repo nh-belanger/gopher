@@ -28,9 +28,12 @@
     </ul>
   </div>
   <br>
-  <div class="custom-button">
-    <%= link_to "Join", member_teetime_join_path(teetime_id: @teetime.id) %>
-  </div>
+
+  <% unless @teetime.members.all.length == 4 %>
+    <div class="custom-button">
+      <%= link_to "Join", member_teetime_join_path(teetime_id: @teetime.id) %>
+    </div>
+  <% end %>
 
   <% unless current_member.nil? %>
     <% if @member_can_change  %>

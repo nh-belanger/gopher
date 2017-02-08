@@ -37,6 +37,10 @@
       <%= f.hidden_field :creator, :value => "#{current_member.last_name}, #{current_member.first_name}" %>
     </div>
 
+    <div>
+      <%= f.hidden_field :creator_id, :value => current_member.id %>
+    </div>
+
     <div class="actions">
       <%= f.submit "Reserve", :class => 'custom-button' %>
     </div>

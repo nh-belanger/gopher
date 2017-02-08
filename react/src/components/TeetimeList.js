@@ -49,8 +49,8 @@ class TeetimeList extends Component {
               <div key={teetime.id} className="text-center small-4 large-6 small-centered large-centered">
                 <div key={teetime.id} className="teetimes-box">
                   <div className="teetime-list">
-                    <a href={`/teetimes/${teetime.id}`}>
-                      <div>{teetime.formatteddate} | {teetime.formattedtime} | {teetime.creator}</div>
+                    <a href={`/members/1/teetimes/${teetime.id}`}>
+                      <div>{teetime.formatted_date} | {teetime.formatted_time} | {teetime.creator}</div>
                     </a>
                   </div>
                 </div>
