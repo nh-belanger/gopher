@@ -1,5 +1,5 @@
 class AddFormatteddateToTeetimes < ActiveRecord::Migration[5.0]
   def change
-    add_column :teetimes, :formatteddate, :string
+    add_column :teetimes, :formatted_date, :string
   end
 end

@@ -8,6 +8,10 @@ body {
 
 }
 
+.please-work {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .content-box {
   margin-top: 30%;
   background: rgba(0, 0, 0, .5);
@@ -15,8 +19,6 @@ body {
   border-color: rgb(168, 168, 168);
   border-style: solid;
 }
-
-/* TODO: add edit to reservations and teetimes */
 
 .error-msg {
   width: 100%;
@@ -59,10 +61,6 @@ body {
 
 .top-bar-section .has-dropdown > a:after {
     border-color: #FFFFFF rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-}
-
-div[role=menu] {
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .content-box-form {
@@ -147,7 +145,7 @@ div[role=menu] {
 .top-bar {
   padding: 0vw;
   margin: 0px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   border-bottom-color: rgba(255, 255, 255, 1);
   font-size: 125%;
   border-bottom-style: solid;

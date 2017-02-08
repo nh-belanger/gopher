@@ -40,8 +40,14 @@ class TeetimesController < ApplicationController
 
   def join
     @teetime = Teetime.find(params[:teetime_id])
-    Timesheet.create(teetime: @teetime, member: current_member)
-    redirect_to member_teetimes_path
+    if @teetime.members.all.length < 4
+      Timesheet.create(teetime: @teetime, member: current_member)
+      redirect_to member_teetimes_path
+      flash[:notice] = "You joined #{@teetime.creator}'s teetime."
+    else
+      redirect_to member_teetimes_path
+      flash[:notice] = "Teetimes may have a maximum of four players."
+    end
   end
 
   def create
@@ -85,7 +91,7 @@ class TeetimesController < ApplicationController
   private
 
   def teetime_params
-    params.require(:teetime).permit(:date, :time, :starting_hole, :creator, :formatteddate, :formattedtime)
+    params.require(:teetime).permit(:date, :time, :starting_hole, :creator, :formatted_date, :formatted_time, :creator_id)
   end
 
   def can_change?(teetime)
