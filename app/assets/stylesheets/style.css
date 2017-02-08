@@ -264,7 +264,7 @@ a:hover, a:focus {
 
 .homepage-title-big {
   /*font-family: 'Roboto Slab', serif;*/
-  font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', cursive !important;
   color: white;
   display: inline;
   text-align: center;
