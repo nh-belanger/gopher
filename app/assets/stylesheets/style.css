@@ -53,12 +53,16 @@ body {
   font-size: 125%;
 }
 
-.dropdown li {
+/*.dropdown li {
   background: black;
-}
+}*/
 
 .top-bar-section .has-dropdown > a:after {
     border-color: #FFFFFF rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+
+div[role=menu] {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .content-box-form {
@@ -143,7 +147,7 @@ body {
 .top-bar {
   padding: 0vw;
   margin: 0px;
-  background: black;
+  background: rgba(0, 0, 0, 0.5);
   border-bottom-color: rgba(255, 255, 255, 1);
   font-size: 125%;
   border-bottom-style: solid;
@@ -156,6 +160,10 @@ body {
   font-family: 'Pacifico', cursive, !important;
   font-size: 150%;
   margin-left: 10px;
+}
+
+.ul.dropdown.menu {
+  background: rgba(0, 0, 0, 0);
 }
 
 
