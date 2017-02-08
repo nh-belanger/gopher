@@ -36,7 +36,14 @@ class TeetimesController < ApplicationController
     unless current_member.nil?
       @member_can_change = can_change?(@teetime)
     end
+
+    @member_can_join = false
+    unless current_member.nil?
+      @member_can_join = can_join?(@teetime)
+    end
   end
+
+  # TODO: make it so a teetime you are in cannot be joined twice
 
   def join
     @teetime = Teetime.find(params[:teetime_id])
@@ -87,16 +94,21 @@ class TeetimesController < ApplicationController
   end
 
   # TODO: can't join teetime if 4 or more people already joined
+  # TODO: fix can't join if set to unjoinable
 
   private
 
   def teetime_params
-    params.require(:teetime).permit(:date, :time, :starting_hole, :creator, :formatted_date, :formatted_time, :creator_id)
+    params.require(:teetime).permit(:date, :time, :unjoinable, :starting_hole, :creator, :formatted_date, :formatted_time, :creator_id)
   end
 
   def can_change?(teetime)
     # current_member == teetime.members.first || current_member.role == "admin"
     current_member.role == "admin" || current_member == teetime.members.first
+  end
+
+  def can_join?(teetime)
+    teetime.unjoinable == false || teetime.members.all.length < 4
   end
 
   def authorize_member

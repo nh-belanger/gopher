@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208062231) do
+ActiveRecord::Schema.define(version: 20170208154405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 20170208062231) do
     t.string   "role",                   default: "member", null: false
     t.string   "access_token"
     t.string   "refresh_token"
+    t.string   "token"
+    t.string   "uid"
+    t.string   "provider"
     t.index ["email"], name: "index_members_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
   end
@@ -73,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170208062231) do
     t.string  "formatted_date"
     t.string  "formatted_time"
     t.integer "creator_id"
+    t.boolean "unjoinable"
   end
 
   create_table "timesheets", force: :cascade do |t|

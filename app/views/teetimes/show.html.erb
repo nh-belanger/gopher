@@ -19,6 +19,13 @@
 
 <div class="column text-center small-12 large-6 small-centered large-centered">
   <div class="teetimes-box">
+    <p class = "teetime-show-subtitle"> <%= @teetime.unjoinable %> </p>
+  </div>
+</div>
+<br>
+
+<div class="column text-center small-12 large-6 small-centered large-centered">
+  <div class="teetimes-box">
     <p class = "custom-text-cursive">Player's List</p>
     <ul>
       <% @members.each do |member| %>
@@ -30,10 +37,13 @@
   </div>
   <br>
 
-  <% unless @teetime.members.all.length == 4 %>
-    <div class="custom-button">
-      <%= link_to "Join", member_teetime_join_path(teetime_id: @teetime.id) %>
-    </div>
+
+  <% unless current_member.nil? %>
+    <% if @member_can_join %>
+      <div class="custom-button">
+        <%= link_to "Join", member_teetime_join_path(teetime_id: @teetime.id) %>
+      </div>
+    <% end %>
   <% end %>
 
   <% unless current_member.nil? %>

@@ -12,7 +12,7 @@ gem 'font-awesome-rails'
 gem 'foundation-rails'
 gem 'omniauth-google-oauth2'
 gem 'google-api-client'
-gem 'google_calendar'
+gem 'omniauth'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 group :development do
