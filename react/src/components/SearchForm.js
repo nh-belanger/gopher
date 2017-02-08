@@ -11,11 +11,9 @@ const SearchForm = props => {
   }
 
   return(
-    <div className='content-box'>
-      <h1 className="custom-text">Add a Teetime</h1>
-      <input type='text' onChange={handleChange} placeholder="Search" />
-      {addTeetime}
-    </div>
+      <div className="animated fadeIn centered small-1 large-6 small-centered large-centered columns">
+        <input type='text' onChange={handleChange} placeholder="Search the Timesheet for Members" />
+      </div>
   );
 };
 

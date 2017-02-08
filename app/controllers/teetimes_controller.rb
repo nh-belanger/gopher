@@ -49,7 +49,6 @@ class TeetimesController < ApplicationController
 
     @member = Member.find(params[:member_id])
 
-
     if @teetime.save
       flash[:notice] = "Teetime reserved"
       Timesheet.create(member: current_member, teetime: @teetime)
@@ -86,7 +85,7 @@ class TeetimesController < ApplicationController
   private
 
   def teetime_params
-    params.require(:teetime).permit(:date, :time, :starting_hole)
+    params.require(:teetime).permit(:date, :time, :starting_hole, :creator, :formatteddate, :formattedtime)
   end
 
   def can_change?(teetime)
