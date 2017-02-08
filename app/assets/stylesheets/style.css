@@ -20,6 +20,10 @@ body {
   border-style: solid;
 }
 
+.button {
+  background: white;
+}
+
 .error-msg {
   width: 100%;
   color: #FFFFFF;
