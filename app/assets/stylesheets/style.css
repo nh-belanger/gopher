@@ -20,6 +20,24 @@ body {
   border-style: solid;
 }
 
+.check-box {
+  background: rgba(0, 0, 0, .5);
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: white;
+  border-style: solid;
+}
+
+.custom-checkbox {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin: 20px auto;
+  background: #fcfff4;
+  background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+
 .button {
   background: white;
 }
@@ -47,6 +65,22 @@ body {
   margin-bottom: 1vw;
 }
 
+.teetimes-box-unjoinable {
+  background: rgba(0, 0, 0, .6);
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: darkgreen;
+  border-style: solid;
+  margin-bottom: 1vw;
+}
+
+.teetimes-box-full {
+  background: rgba(0, 0, 0, .6);
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: darkblue;
+  border-style: solid;
+  margin-bottom: 1vw;
+}
+
 .teetimes-box:hover {
   background: rgba(0, 0, 0, .8);
   border-color: white;
@@ -58,6 +92,7 @@ body {
   list-style-type: none;
   font-size: 125%;
 }
+
 
 /*.dropdown li {
   background: black;

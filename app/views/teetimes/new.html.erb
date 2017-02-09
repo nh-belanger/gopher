@@ -33,8 +33,11 @@
       <%= f.number_field :starting_hole, :placeholder => "Starting Hole", autofocus: true %>
     </div>
 
-    <div>
-      <%= f.check_box :unjoinable %>
+    <div class="custom-button">
+        <%= f.label :unjoinable do %>
+        <%= f.check_box :unjoinable, :id => "custom-checkbox" %>
+        Make Private
+        <% end %>
     </div>
 
     <div>
@@ -44,6 +47,8 @@
     <div>
       <%= f.hidden_field :creator_id, :value => current_member.id %>
     </div>
+
+
 
     <div class="actions">
       <%= f.submit "Reserve", :class => 'custom-button' %>

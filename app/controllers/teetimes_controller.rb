@@ -44,13 +44,31 @@ class TeetimesController < ApplicationController
   end
 
   # TODO: make it so a teetime you are in cannot be joined twice
+  # TODO: make is so you can leave a teetime
 
   def join
     @teetime = Teetime.find(params[:teetime_id])
+
+
     if @teetime.members.all.length < 4
       Timesheet.create(teetime: @teetime, member: current_member)
-      redirect_to member_teetimes_path
-      flash[:notice] = "You joined #{@teetime.creator}'s teetime."
+
+
+      # TODO: trying to set @teetime.full to true
+
+      if @teetime.members.all.length == 4
+        @teetime.full = true;
+        if @teetime.save
+          flash[:notice] = "You joined #{@teetime.creator}'s teetime."
+          redirect_to member_teetimes_path
+        else
+          flash[:notice] = "This teetime is not full."
+          redirect_to member_teetimes_path
+        end
+      end
+
+
+
     else
       redirect_to member_teetimes_path
       flash[:notice] = "Teetimes may have a maximum of four players."
@@ -99,7 +117,7 @@ class TeetimesController < ApplicationController
   private
 
   def teetime_params
-    params.require(:teetime).permit(:date, :time, :unjoinable, :starting_hole, :creator, :formatted_date, :formatted_time, :creator_id)
+    params.require(:teetime).permit(:date, :time, :unjoinable, :full, :starting_hole, :creator, :formatted_date, :formatted_time, :creator_id)
   end
 
   def can_change?(teetime)
@@ -108,7 +126,7 @@ class TeetimesController < ApplicationController
   end
 
   def can_join?(teetime)
-    teetime.unjoinable == false || teetime.members.all.length < 4
+    !teetime.unjoinable && teetime.members.all.length < 4
   end
 
   def authorize_member
@@ -117,5 +135,4 @@ class TeetimesController < ApplicationController
       raise ActionController::RoutingError.new("Not Found")
     end
   end
-
 end

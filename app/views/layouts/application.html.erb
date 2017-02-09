@@ -12,56 +12,55 @@
     <script src="js/wow.min.js"></script>
     <script>new WOW().init();</script> -->
   </head>
-  <body>
 
-  <div class="animated fadeInDown">
-    <div class="top-bar">
-      <div class="top-bar-title">
-        <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-          <button class="menu-icon dark" type="button" data-toggle></button>
-        </span>
-        <a href="/">Gopher</a>
-      </div>
-      <div id="responsive-menu">
-        <% if member_signed_in? %>
-        <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li>
-              <a href="#">Schedule</a>
-              <ul class="menu vertical">
-                <div class="please-work">
-                <li><a href="/members/<%= current_member.id %>/teetimes/new">Teetime</a></li>
-                <li><a href="/members/<%= current_member.id %>/reservations/new">Dining</a></li>
-                <li><a href="#">Three</a></li>
-                </div>
-              </ul>
-            </li>
-            <li><a href="/members/<%= current_member.id %>/teetimes">Teetimes</a></li>
-            <li><a href="/members/<%= current_member.id %>/reservations">Reservations</a></li>
-          </ul>
+  <body>
+    <div class="animated fadeInDown">
+      <div class="top-bar">
+        <div class="top-bar-title">
+          <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+            <button class="menu-icon dark" type="button" data-toggle></button>
+          </span>
+          <a href="/">Gopher</a>
         </div>
-        <div class="top-bar-right">
-          <ul class="menu">
-            <li><a href='/members/sign_out'>Sign out?</a></li>
-            <li><a href='/members/edit'><%= current_member.last_name %>, <%= current_member.first_name %></a></li>
-          </ul>
+        <div id="responsive-menu">
+          <% if member_signed_in? %>
+          <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+              <li>
+                <a href="#">Schedule</a>
+                <ul class="menu vertical">
+                  <div class="please-work">
+                  <li><a href="/members/<%= current_member.id %>/teetimes/new">Teetime</a></li>
+                  <li><a href="/members/<%= current_member.id %>/reservations/new">Dining</a></li>
+                  <li><a href="#">Three</a></li>
+                  </div>
+                </ul>
+              </li>
+              <li><a href="/members/<%= current_member.id %>/teetimes">Teetimes</a></li>
+              <li><a href="/members/<%= current_member.id %>/reservations">Reservations</a></li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li><a href='/members/sign_out'>Sign out?</a></li>
+              <li><a href='/members/edit'><%= current_member.last_name %>, <%= current_member.first_name %></a></li>
+            </ul>
+          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
-  </div>
 
-  <div class='animated fadeInDown error-msg'>
-    <% flash.each do |name, msg| %>
-      <div class='error-msg'>
-        <% msg = "Invalid Electronic Mail or Password" if msg == 'Invalid Email or password.' %><%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-      </div>
-    <% end %>
-  </div>
+    <div class='animated fadeInDown error-msg'>
+      <% flash.each do |name, msg| %>
+        <div class='error-msg'>
+          <% msg = "Invalid Electronic Mail or Password" if msg == 'Invalid Email or password.' %><%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+        </div>
+      <% end %>
+    </div>
 
-  <div class="content">
-    <%= yield %>
-  </div>
-
-</body>
+    <div class="content">
+      <%= yield %>
+    </div>
+  </body>
 </html>
