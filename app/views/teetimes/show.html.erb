@@ -1,3 +1,6 @@
+
+
+
 <div class="row">
   <div class="showpage-title">
     <div class="small-12 large-6 small-centered large-centered columns">
@@ -10,9 +13,16 @@
 <br>
 <br>
 
+
 <div class="column text-center small-12 large-6 small-centered large-centered">
   <div class="teetimes-box">
     <p class = "teetime-show-subtitle">Starting on hole <%= @teetime.starting_hole %>, at <%= @teetime.time.strftime('%l:%M %p ') %> on <%= @teetime.date.strftime('%a, %B %e ') %> </p>
+  </div>
+</div>
+
+<div class="column text-center small-12 large-6 small-centered large-centered">
+  <div class="teetimes-box">
+    <p class = "teetime-show-subtitle"> Weather summary: <%= @weather_summary %>, <%= @weather_temperature %>&deg;F </p><br>
   </div>
 </div>
 <br>

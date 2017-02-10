@@ -15,6 +15,8 @@
 
   <body>
     <div class="animated fadeInDown">
+
+
       <div class="top-bar">
         <div class="top-bar-title">
           <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
@@ -32,7 +34,6 @@
                   <div class="please-work">
                   <li><a href="/members/<%= current_member.id %>/teetimes/new">Teetime</a></li>
                   <li><a href="/members/<%= current_member.id %>/reservations/new">Dining</a></li>
-                  <li><a href="#">Three</a></li>
                   </div>
                 </ul>
               </li>
@@ -50,7 +51,9 @@
           <% end %>
         </div>
       </div>
-    </div>
+  </div>
+
+
 
     <div class='animated fadeInDown error-msg'>
       <% flash.each do |name, msg| %>

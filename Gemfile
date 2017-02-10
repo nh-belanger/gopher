@@ -14,6 +14,7 @@ gem 'omniauth-google-oauth2'
 gem 'google-api-client'
 gem 'omniauth'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'forecast_io'
 
 group :development do
   gem 'listen', '~> 3.0.5'

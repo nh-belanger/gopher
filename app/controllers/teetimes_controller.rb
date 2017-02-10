@@ -1,6 +1,9 @@
 class TeetimesController < ApplicationController
   # before_action :authorize_member, except: [:index, :show]
 
+  require 'forecast_io'
+
+
   def index
     @teetimes = Teetime.all
     @member_can_create = !current_member.nil?
@@ -46,6 +49,16 @@ class TeetimesController < ApplicationController
     unless current_member.nil?
       @member_can_join = can_join?(@teetime)
     end
+
+
+    @date_part = @teetime.date.to_s
+    @time_part = @teetime.time.strftime('%H:%M:%S')
+    @date_time = "#{@date_part}T#{@time_part}"
+
+    @latitude = 42.3756
+    @longitude = -71.1695
+    @weather_summary = ForecastIO.forecast(@latitude, @longitude, time: @date_time).currently.summary
+    @weather_temperature = ForecastIO.forecast(@latitude, @longitude, time: @date_time).currently.temperature
   end
 
   # TODO: make it so a teetime you are in cannot be joined twice
@@ -126,4 +139,10 @@ class TeetimesController < ApplicationController
       raise ActionController::RoutingError.new("Not Found")
     end
   end
+
+  ForecastIO.configure do |configuration|
+    configuration.api_key = '3005c7b585dcfef488065585a2bee2a3'
+  end
+
+
 end
