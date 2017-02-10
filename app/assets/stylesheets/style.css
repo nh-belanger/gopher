@@ -87,7 +87,7 @@ body {
 .teetimes-box-unjoinable {
   background: rgba(0, 0, 0, .6);
   /*padding: 10px 10px 10px 10px;*/
-  border-color: rgba(178, 28, 17, 1);
+  border-color:  rgb(1, 16, 99);
   border-style: solid;
   margin-bottom: 1vw;
 }
@@ -95,7 +95,7 @@ body {
 .teetimes-box-full {
   background: rgba(0, 0, 0, .6);
   /*padding: 10px 10px 10px 10px;*/
-  border-color: rgb(1, 16, 99);
+  border-color: rgb(178, 28, 1);
   border-style: solid;
   margin-bottom: 1vw;
 }

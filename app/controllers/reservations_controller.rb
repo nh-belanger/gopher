@@ -29,6 +29,7 @@ class ReservationsController < ApplicationController
   def join
     @reservation = Reservation.find(params[:reservation_id])
     Dining.create(reservation: @reservation, member: current_member)
+    flash[:notice] = "You joined #{@reservation.members.first.first_name} #{@reservation.members.first.last_name}'s reservation."
     redirect_to member_reservations_path
   end
 

@@ -84,6 +84,8 @@ class TeetimesController < ApplicationController
 
     @member = Member.find(params[:member_id])
 
+
+
     if @teetime.save
       flash[:notice] = "Teetime reserved"
       Timesheet.create(member: current_member, teetime: @teetime)
@@ -113,6 +115,11 @@ class TeetimesController < ApplicationController
   def new
     @member = Member.find(params[:member_id])
     @teetime = Teetime.new
+
+    @latitude = 42.3756
+    @longitude = -71.1695
+    @weather_summary = ForecastIO.forecast(@latitude, @longitude).currently.summary
+    @weather_temperature = ForecastIO.forecast(@latitude, @longitude).currently.temperature
   end
 
   # TODO: can't join teetime if 4 or more people already joined

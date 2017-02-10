@@ -12,6 +12,13 @@
 </div>
 </div>
 <br>
+
+<div class="column text-center small-12 large-6 small-centered large-centered">
+  <div class="teetimes-box">
+    <p class = "teetime-show-subtitle"> On Course Weather: <%= @weather_summary %>, <%= @weather_temperature %>&deg;F </p><br>
+  </div>
+</div>
+<br>
 <br>
 
 <%= form_for([@member, @teetime]) do |f| %>
@@ -58,4 +65,6 @@
     <% end %>
   </div>
 </div>
+
+
 </div>
