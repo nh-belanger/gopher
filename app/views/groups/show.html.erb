@@ -1,0 +1,69 @@
+<div class="showpage-title">
+      <div class="small-12 large-6 small-centered large-centered columns">
+        <div class="content-box-form-title">
+          <h1 class="homepage-title small-3 large-6 small-centered large-centered"> <%= @group.name %> </h1>
+        </div>
+      </div>
+    </div>
+</div>
+
+<br>
+
+<div class="column text-center small-12 large-6 small-centered large-centered">
+  <div class="teetimes-box">
+    <p class = "custom-text-cursive">Members</p>
+    <ul>
+      <% @members.each do |member| %>
+        <li class = "teetime-list">
+          <%= member.last_name %>, <%= member.first_name %>
+        </li>
+      <% end %>
+    </ul>
+    <div class="custom-button">
+      <%= link_to "Join", member_group_join_path(group_id: @group.id) %>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<row>
+  <div class="column text-center small-12 large-6">
+    <div class="teetimes-box">
+      <h3 class = "custom-text-cursive">Teetimes</h3>
+      <ul>
+        <% @members.each do |member| %>
+          <% unless member.teetimes.length == 0 %>
+            <h4 class="member-heading">  <%= member.first_name %> <%= member.last_name %> </h4>
+            <% member.teetimes.each do |teetime| %>
+              <li class = "teetime-list">
+                <a href="/members/<%= current_member.id %>/teetimes/<%= teetime.id %>"><%= teetime.date.strftime('%a, %B %e ')%> | <%= teetime.time.strftime('%l:%M %p') %> </a>
+              </li>
+            <% end %>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="column text-center small-12 large-6">
+    <div class="teetimes-box">
+      <h3 class = "custom-text-cursive">Reservations</h3>
+      <ul>
+        <% @members.each do |member| %>
+          <% unless member.reservations.length == 0 %>
+            <h4 class="member-heading">  <%= member.first_name %> <%= member.last_name %> </h4>
+            <% member.reservations.each do |reservation| %>
+              <li class = "teetime-list">
+                <a href="/members/<%= current_member.id %>/reservations/<%= reservation.id %>"><%= reservation.date.strftime('%a, %B %e ')%> | <%= reservation.time.strftime('%l:%M %p') %> </a>
+              </li>
+            <% end %>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</row>
+<br>
+<br>
+<br>

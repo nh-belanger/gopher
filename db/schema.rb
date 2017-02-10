@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208220939) do
+ActiveRecord::Schema.define(version: 20170209231431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20170208220939) do
     t.integer "reservation_id"
     t.index ["member_id"], name: "index_dinings_on_member_id", using: :btree
     t.index ["reservation_id"], name: "index_dinings_on_reservation_id", using: :btree
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name", null: false
   end
 
   create_table "holes", force: :cascade do |t|
@@ -55,11 +59,19 @@ ActiveRecord::Schema.define(version: 20170208220939) do
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "memberships", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "group_id"
+    t.index ["group_id"], name: "index_memberships_on_group_id", using: :btree
+    t.index ["member_id"], name: "index_memberships_on_member_id", using: :btree
+  end
+
   create_table "reservations", force: :cascade do |t|
     t.time    "time",       null: false
     t.date    "date",       null: false
     t.string  "room",       null: false
     t.integer "party_size", null: false
+    t.boolean "unjoinable"
   end
 
   create_table "scorecards", force: :cascade do |t|

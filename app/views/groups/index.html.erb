@@ -1,0 +1,39 @@
+<div class="animated slideInRight">
+
+
+<div class="row">
+    <div class="homepage-title">
+      <div class="small-12 large-6 small-centered large-centered columns">
+          <div class="content-box-form-title">
+            <h1 class="homepage-title small-3 large-6 small-centered large-centered">Your Groups</h1>
+          </div>
+      </div>
+    </div>
+</div>
+</div>
+<br>
+<br>
+
+
+
+<div class="animated slideInLeft">
+
+
+<div class="text-center small-12 large-8 small-centered large-centered">
+  <ul>
+    <% @groups.each do |group| %>
+      <% group.members.each do |member| %>
+        <% if member.id == current_member.id %>
+          <div class="teetimes-box">
+            <li class = "teetime-list">
+              <a href="/members/<%= current_member.id %>/groups/<%= group.id %>">
+                <%= group.name %>
+              </a>
+            </li>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+</div>

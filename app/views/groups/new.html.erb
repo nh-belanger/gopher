@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="homepage-title">
+      <div class="small-12 large-6 small-centered large-centered columns">
+          <div class="content-box-form-title">
+            <h1 class="homepage-title small-3 large-6 small-centered large-centered">Create a Group</h1>
+          </div>
+      </div>
+    </div>
+</div>
+<br>
+<br>
+
+<%= form_for([@member, @group]) do |f| %>
+
+<div class="row">
+  <div class="column text-center small-12 large-6 small-centered large-centered">
+
+    <div>
+      <%= f.text_field :name, :placeholder => "Name?", autofocus: true %>
+    </div>
+
+
+    <div class="actions">
+      <%= f.submit "Create", :class => 'custom-button' %>
+    </div>
+    <br>
+    <br>
+    <% end %>
+  </div>
+</div>

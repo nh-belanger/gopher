@@ -6,7 +6,13 @@ Rails.application.routes.draw do
 
   resources :members do
     resources :teetimes do
-      get :join    
+      get :join
+    end
+  end
+
+  resources :members do
+    resources :groups do
+      get :join
     end
   end
 
