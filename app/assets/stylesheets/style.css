@@ -3,9 +3,10 @@
 }*/
 
 body {
-  background: url('background.jpg') no-repeat center center fixed;
-  /*background-position: 0 20px;*/
-
+  background: url('background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .menu > li > a {
