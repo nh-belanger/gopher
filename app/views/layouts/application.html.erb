@@ -29,11 +29,12 @@
           <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
               <li>
-                <a href="#">Schedule</a>
+                <a href="#">Create</a>
                 <ul class="menu vertical">
                   <div class="please-work">
                   <li><a href="/members/<%= current_member.id %>/teetimes/new">Teetime</a></li>
-                  <li><a href="/members/<%= current_member.id %>/reservations/new">Dining</a></li>
+                  <li><a href="/members/<%= current_member.id %>/reservations/new">Dining Reservation</a></li>
+                  <li><a href="/members/<%= current_member.id %>/groups/new">Group</a></li>
                   </div>
                 </ul>
               </li>
@@ -44,7 +45,7 @@
           </div>
           <div class="top-bar-right">
             <ul class="menu">
-              <li><a href='/members/sign_out'>Sign out?</a></li>
+              <li><%= link_to 'Sign Out', destroy_member_session_path, :method => :delete %></li>
               <li><a href='/members/edit'><%= current_member.last_name %>, <%= current_member.first_name %></a></li>
               <li>&nbsp;</li>
             </ul>
