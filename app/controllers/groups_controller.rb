@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
   def index
     @groups = Group.all
     @member_can_create = !current_member.nil?
+    @view_all = true
   end
 
   def destroy
@@ -50,6 +51,11 @@ class GroupsController < ApplicationController
       flash[:notice] = "You joined #{@group.name}."
       redirect_to member_groups_path
     end
+  end
+
+  def change_view
+    @view_all = false
+    redirect_to member_groups_path
   end
 
   def create

@@ -26,6 +26,14 @@ body {
   border-style: solid;
 }
 
+.content-box-title {
+  margin-top: 50%;
+  background: rgba(0, 0, 0, .5);
+  /*padding: 10px 10px 10px 10px;*/
+  border-color: rgb(168, 168, 168);
+  border-style: solid;
+}
+
 .check-box {
   background: rgba(0, 0, 0, .5);
   /*padding: 10px 10px 10px 10px;*/
@@ -321,6 +329,16 @@ a:hover, a:focus {
   text-align: center;
   margin-bottom: 5px;
   /*font-size: 200%;*/
+}
+
+.homepage-title-title {
+  /*font-family: 'Roboto Slab', serif;*/
+  font-family: 'Pacifico', cursive;
+  color: white;
+  display: inline;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 200%;
 }
 
 /*.homepage-title-big {
