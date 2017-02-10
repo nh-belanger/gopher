@@ -15,6 +15,9 @@ class Member < ApplicationRecord
   has_many :dinings
   has_many :reservations, through: :dinings
 
+  has_many :memberships
+  has_many :groups, through: :memberships
+
   def admin?
     role == "admin"
   end

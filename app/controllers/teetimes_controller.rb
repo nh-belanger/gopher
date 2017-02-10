@@ -4,6 +4,11 @@ class TeetimesController < ApplicationController
   def index
     @teetimes = Teetime.all
     @member_can_create = !current_member.nil?
+
+    @teetimes.each do |teetime|
+      teetime.formatted_date = teetime.date.strftime('%a, %B %e ')
+      teetime.formatted_time = teetime.time.strftime('%l:%M %p')
+    end
   end
 
   def destroy
@@ -49,29 +54,15 @@ class TeetimesController < ApplicationController
   def join
     @teetime = Teetime.find(params[:teetime_id])
 
+    Timesheet.create(teetime: @teetime, member: current_member)
 
-    if @teetime.members.all.length < 4
-      Timesheet.create(teetime: @teetime, member: current_member)
+    if @teetime.members.all.length == 4
+      @teetime.full = true;
+    end
 
-
-      # TODO: trying to set @teetime.full to true
-
-      if @teetime.members.all.length == 4
-        @teetime.full = true;
-        if @teetime.save
-          flash[:notice] = "You joined #{@teetime.creator}'s teetime."
-          redirect_to member_teetimes_path
-        else
-          flash[:notice] = "This teetime is not full."
-          redirect_to member_teetimes_path
-        end
-      end
-
-
-
-    else
+    if @teetime.save
+      flash[:notice] = "You joined #{@teetime.creator}'s teetime."
       redirect_to member_teetimes_path
-      flash[:notice] = "Teetimes may have a maximum of four players."
     end
   end
 
