@@ -18,6 +18,11 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.bottom-please {
+  position:absolute;
+  bottom:0;
+}
+
 .content-box {
   margin-top: 30%;
   background: rgba(0, 0, 0, .5);
