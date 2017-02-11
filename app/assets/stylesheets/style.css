@@ -2,11 +2,19 @@
   background: url(background.jpg) no-repeat center center fixed;
 }*/
 
-body {
+/*body {
   background: url('background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}*/
+
+body {
+  background: url(background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .menu > li > a {
