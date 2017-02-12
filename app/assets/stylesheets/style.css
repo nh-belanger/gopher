@@ -216,6 +216,20 @@ body {
     border-width: thin;
 }
 
+.custom-button-small-transparent {
+    background-color: rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-color: rgb(168, 168, 168);
+    padding: 0px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 75%;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+    border-width: thin;
+}
+
 .custom-button-small:hover {
   background: rgba(0, 0, 0, 0.8);
   border-color: white;
