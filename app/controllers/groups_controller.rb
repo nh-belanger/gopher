@@ -32,6 +32,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @members = @group.members
     @member = @group.members.first
+    @group_requests = Grouprequest.where(group_id: @group.id)
 
     @member_can_change = false
     unless current_member.nil?
@@ -48,10 +49,21 @@ class GroupsController < ApplicationController
     Membership.create(group: @group, member: current_member)
 
     if @group.save
-      flash[:notice] = "You joined #{@group.name}."
+      flash[:notice] = "Join request granted."
       redirect_to member_groups_path
     end
   end
+
+  def joinrequest
+    @group = Group.find(params[:group_id])
+
+    Grouprequest.create(member_id: current_member.id, group_id: @group.id)
+
+    flash[:notice] = "You requested to joined #{@group.name}."
+    redirect_to member_groups_path
+    
+  end
+
 
   def change_view
     @view_all = false

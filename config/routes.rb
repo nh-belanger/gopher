@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :members do
     resources :groups do
       get :join
+      get :joinrequest
     end
   end
 
