@@ -41,6 +41,20 @@
         </li>
       <% end %>
     </ul>
+    <% if @teetime_requests == nil %>
+      <p class="custom-text-cursive">Requests</p>
+      <ul>
+        <% @teetime_requests.each do |request| %>
+          <li class = "teetime-list">
+            <% @request_member = Member.find(request.member_id) %>
+            <%= @request_member.last_name %>, <%= @request_member.first_name %>
+            <div class="custom-button-small-transparent">
+              <%= link_to "Accept", member_teetime_join_path(teetime_id: @teetime.id) %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
   <br>
 
@@ -48,7 +62,7 @@
   <% unless current_member.nil? %>
     <% if @member_can_join %>
       <div class="custom-button">
-        <%= link_to "Join", member_teetime_join_path(teetime_id: @teetime.id) %>
+        <%= link_to "Request Join", member_teetime_joinrequest_path(teetime_id: @teetime.id) %>
       </div>
     <% end %>
   <% end %>

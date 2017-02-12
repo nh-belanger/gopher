@@ -39,6 +39,7 @@ class TeetimesController < ApplicationController
     @teetime = Teetime.find(params[:id])
     @members = @teetime.members
     @member = @teetime.members.first
+    @teetime_requests = Teetimerequest.where(teetime_id: @teetime.id)
 
     @member_can_change = false
     unless current_member.nil?
@@ -77,6 +78,15 @@ class TeetimesController < ApplicationController
       flash[:notice] = "You joined #{@teetime.creator}'s teetime."
       redirect_to member_teetimes_path
     end
+  end
+
+  def joinrequest
+    @teetime = Teetime.find(params[:teetime_id])
+
+    Teetimerequest.create(member_id: current_member.id, teetime_id: @teetime.id)
+
+    flash[:notice] = "You requested to joined #{@teetime.members.first.first_name} #{@teetime.members.first.last_name}'s teetime."
+    redirect_to member_teetimes_path
   end
 
   def create
