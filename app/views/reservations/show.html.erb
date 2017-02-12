@@ -26,10 +26,24 @@
         </li>
       <% end %>
     </ul>
+    <% if @reservation_requests.length != 0 %>
+      <p class="custom-text-cursive">Requests</p>
+      <ul>
+        <% @reservation_requests.each do |request| %>
+          <li class = "teetime-list">
+            <% @request_member = Member.find(request.member_id) %>
+            <%= @request_member.last_name %>, <%= @request_member.first_name %>
+            <div class="custom-button-small-transparent">
+              <%= link_to "Accept", member_reservation_join_path(reservation_id: @reservation.id) %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
   <br>
   <div class="custom-button">
-    <%= link_to "Join", member_reservation_join_path(reservation_id: @reservation.id) %>
+    <%= link_to "Request", member_reservation_requestjoin_path(reservation_id: @reservation.id) %>
   </div>
 
   <% unless current_member.nil? %>

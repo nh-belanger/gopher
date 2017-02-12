@@ -41,7 +41,7 @@
         </li>
       <% end %>
     </ul>
-    <% if @teetime_requests == nil %>
+    <% if @teetime_requests.length != 0 %>
       <p class="custom-text-cursive">Requests</p>
       <ul>
         <% @teetime_requests.each do |request| %>

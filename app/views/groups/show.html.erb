@@ -18,7 +18,7 @@
         </li>
       <% end %>
     </ul>
-    <% if @group_requests == nil %>
+    <% if @group_requests.length != 0 %>
       <p class = "custom-text-cursive">Requests</p>
       <ul>
         <% @group_requests.each do |request| %>
