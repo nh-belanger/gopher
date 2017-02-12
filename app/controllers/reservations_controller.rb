@@ -29,7 +29,17 @@ class ReservationsController < ApplicationController
   def join
     @reservation = Reservation.find(params[:reservation_id])
     Dining.create(reservation: @reservation, member: current_member)
+    Reservationrequest.where(reservation_id: @reservation.id, member_id: @reservation.members.last.id).destroy_all
     flash[:notice] = "You joined #{@reservation.members.first.first_name} #{@reservation.members.first.last_name}'s reservation."
+    redirect_to member_reservations_path
+  end
+
+  def joinrequest
+    @reservation = Reservation.find(params[:reservation_id])
+
+    Reservationrequest.create(member_id: current_member.id, reservation_id: @reservation.id)
+
+    flash[:notice] = "You requested to joined #{@reservation.members.first.first_name} #{@reservation.members.first.last_name}'s reservation."
     redirect_to member_reservations_path
   end
 
@@ -56,6 +66,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @members = @reservation.members
     @member = @reservation.members.first
+    @reservation_requests = Reservationrequest.where(reservation_id: @reservation.id)
 
     @member_can_change = false
     unless current_member.nil?
