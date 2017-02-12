@@ -18,20 +18,22 @@
         </li>
       <% end %>
     </ul>
-    <p class = "custom-text-cursive">Requests</p>
-    <ul>
-      <% @group_requests.each do |request| %>
-        <li class = "teetime-list">
-          <% @request_member = Member.find(request.member_id) %>
-          <%= @request_member.last_name %>, <%= @request_member.first_name %>
-          <div class="custom-button-small-transparent">
-            <%= link_to "Accept", member_group_join_path(group_id: @group.id) %>
-          </div>
-        </li>
+    <% if @group_requests == nil %>
+      <p class = "custom-text-cursive">Requests</p>
+      <ul>
+        <% @group_requests.each do |request| %>
+          <li class = "teetime-list">
+            <% @request_member = Member.find(request.member_id) %>
+            <%= @request_member.last_name %>, <%= @request_member.first_name %>
+            <div class="custom-button-small-transparent">
+              <%= link_to "Accept", member_group_join_path(group_id: @group.id) %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
       <% end %>
-    </ul>
 
-    <div class="custom-button">
+    <div class="custom-button-bottom-spacing">
       <%= link_to "Request Join", member_group_joinrequest_path(group_id: @group.id) %>
     </div>
   </div>

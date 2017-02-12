@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application" %>
+
     <%= csrf_meta_tags %>
     <!-- <link rel="stylesheet" href="animate.css">
     <script src="js/wow.min.js"></script>
@@ -68,5 +68,9 @@
     <div class="content">
       <%= yield %>
     </div>
+    <%= javascript_include_tag "application" %>
   </body>
+
+
+
 </html>

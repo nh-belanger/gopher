@@ -181,6 +181,22 @@ body {
     color: white;
 }
 
+.custom-button-bottom-spacing {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-style: solid;
+    border-width: thin;
+    border-color: rgb(168, 168, 168);
+    padding: 2px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 125%;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+}
+
 .custom-button:hover {
   background: rgba(0, 0, 0, 0.8);
   border-color: white;

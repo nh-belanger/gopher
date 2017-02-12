@@ -61,7 +61,6 @@ class GroupsController < ApplicationController
 
     flash[:notice] = "You requested to joined #{@group.name}."
     redirect_to member_groups_path
-    
   end
 
 

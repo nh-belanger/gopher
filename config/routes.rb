@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :members do
     resources :teetimes do
       get :join
+      get :joinrequest
     end
   end
 
