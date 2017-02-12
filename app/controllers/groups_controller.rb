@@ -47,6 +47,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:group_id])
 
     Membership.create(group: @group, member: current_member)
+    Grouprequest.where(group_id: @group.id, member_id: @group.members.last.id).destroy_all
 
     if @group.save
       flash[:notice] = "Join request granted."
@@ -58,6 +59,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:group_id])
 
     Grouprequest.create(member_id: current_member.id, group_id: @group.id)
+
 
     flash[:notice] = "You requested to joined #{@group.name}."
     redirect_to member_groups_path

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :members do
     resources :reservations do
       get :join
+      get :joinrequest
     end
   end
 

@@ -43,7 +43,7 @@
   </div>
   <br>
   <div class="custom-button">
-    <%= link_to "Request", member_reservation_requestjoin_path(reservation_id: @reservation.id) %>
+    <%= link_to "Request", member_reservation_joinrequest_path(reservation_id: @reservation.id) %>
   </div>
 
   <% unless current_member.nil? %>

@@ -69,6 +69,7 @@ class TeetimesController < ApplicationController
     @teetime = Teetime.find(params[:teetime_id])
 
     Timesheet.create(teetime: @teetime, member: current_member)
+    Teetimerequest.where(teetime_id: @teetime.id, member_id: @teetime.members.last.id).destroy_all
 
     if @teetime.members.all.length == 4
       @teetime.full = true;
