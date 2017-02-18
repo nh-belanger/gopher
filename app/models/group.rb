@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, null: false
 
   has_many :memberships
   has_many :members, through: :memberships

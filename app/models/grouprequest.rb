@@ -1,6 +1,6 @@
 class Grouprequest < ApplicationRecord
-  validates :member_id, null: false
-  validates :group_id, null: false
+  validates :member_id, numericality: true
+  validates :group_id, numericality: true
 
   belongs_to :member
 end
