@@ -4,25 +4,17 @@
 ![Code Climate](https://codeclimate.com/github/nh-belanger/gopher.png)
 ![Coverage Status](https://coveralls.io/repos/nh-belanger/gopher/badge.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Gopher! This was my final project, or "breakable toy" for Launch Academy.
 
-Things you may want to cover:
+Designed to bring country club's into the 21st century, Gopher allows members to publish their teetimes and dining reservations. Other members can view these, and request to join. Uses the darksky weather api to pull current forecasts and predictions.
 
-* Ruby version
+-Foundation
+-Devise
+-Darksky
+-Animate CSS
 
-* System dependencies
+NB: This app is still very much "in development". As such, I _highly_ recommend viewing it in Chrome. Catch the latest version [here](http://gophergolf.herokuapp.com)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*To-Add*
+Scorecard and Score-Tracking
+Live Map
